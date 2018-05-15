@@ -1,4 +1,4 @@
-# intraLanguageInterfaces
+# Intra-Language Interfaces
 
 Interfaces for using code from one language in another.
 
