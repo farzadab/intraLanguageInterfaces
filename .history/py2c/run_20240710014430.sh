@@ -7,10 +7,9 @@ MODULE_NAME=$(jq -r '.module_name' $CONFIG_FILE)
 FUNCTION_NAME=$(jq -r '.function_name' $CONFIG_FILE)
 ARGS=$(jq -r '.args | join(" ")' $CONFIG_FILE)
 
-# Find the current Python path
-PYTHON_PATH=$(dirname $(dirname $(which python)))
 
 # Update the include paths and the python module name
+gcc runpython.c -I/Users/visheshyadav/anaconda3/include/python3.11 -L/Users/visheshyadav/anaconda3/lib -lpython3.11 -ldl -framework CoreFoundation
 gcc runpython.c -I${PYTHON_PATH}/include/python3.11 -L${PYTHON_PATH}/lib -lpython3.11 -ldl -framework CoreFoundation
 
 # Ensure the current directory is in the python path
@@ -21,8 +20,8 @@ export DYLD_LIBRARY_PATH="/Users/visheshyadav/anaconda3/lib:$DYLD_LIBRARY_PATH"
 
 # UNCOMMENT IT TO RUN OR, YOU CAN USE THE CONFIG FILE
 # ./a.out mathUtils multiply 12 5
-# ./a.out mathUtils concat_sum_string 12 5 "Hello"
-./a.out mathUtils process_data 1 2.5 "hello" "[1,2,3]" "{key:value}"
+./a.out mathUtils concat_sum_string 12 5 "Hello"
+# ./a.out mathUtils process_data 1 2.5 "hello" "[1,2,3]" "{key:value}"
 
 
 # ./a.out asyncUtils fetch_data "https://jsonplaceholder.typicode.com/todos/1"
