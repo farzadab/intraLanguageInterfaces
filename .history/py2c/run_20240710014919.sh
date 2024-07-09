@@ -7,8 +7,6 @@ MODULE_NAME=$(jq -r '.module_name' $CONFIG_FILE)
 FUNCTION_NAME=$(jq -r '.function_name' $CONFIG_FILE)
 ARGS=$(jq -r '.args | join(" ")' $CONFIG_FILE)
 
-# Find the current Python path
-PYTHON_PATH=$(dirname $(dirname $(which python)))
 
 # Update the include paths and the python module name
 gcc runpython.c -I${PYTHON_PATH}/include/python3.11 -L${PYTHON_PATH}/lib -lpython3.11 -ldl -framework CoreFoundation

@@ -23,3 +23,20 @@ async def fetch_with_timeout(url, timeout):
                 return await response.text()
         except asyncio.TimeoutError:
             return "Request timed out"
+
+
+# config for post_data
+# {
+#     "python_env": "/Users/visheshyadav/anaconda3",
+#     "module_name": "asyncUtils",
+#     "function_name": "post_data",
+#     "args": ["https://jsonplaceholder.typicode.com/posts", {"title": "foo", "body": "bar", "userId": 1}]
+# }
+
+# config for fetch_with_timeout
+# {
+#     "python_env": "/Users/visheshyadav/anaconda3",
+#     "module_name": "asyncUtils",
+#     "function_name": "fetch_with_timeout",
+#     "args": ["https://jsonplaceholder.typicode.com/todos/1", 5]
+# }

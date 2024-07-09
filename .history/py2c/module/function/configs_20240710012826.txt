@@ -1,0 +1,16 @@
+
+# config for fetch_data
+# {
+#     "python_env": "/Users/visheshyadav/anaconda3",
+#     "module_name": "asyncUtils",
+#     "function_name": "fetch_data",
+#     "args": ["https://jsonplaceholder.typicode.com/todos/1"]
+# }
+
+# config for fetch_multiple
+# {
+#     "python_env": "/Users/visheshyadav/anaconda3",
+#     "module_name": "asyncUtils",
+#     "function_name": "fetch_multiple",
+#     "args": [["https://jsonplaceholder.typicode.com/todos/1", "https://jsonplaceholder.typicode.com/todos/2"]]
+# }
